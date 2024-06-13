@@ -39,5 +39,9 @@
     <file url="file://$PROJECT_DIR$/services/user-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/general/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/general/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tests/src/main/resources" charset="UTF-8" />
   </component>
 </project>
