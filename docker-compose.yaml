@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:5.7.36
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      ## 适用于聚合版 SpringBoot 模式
+      - ./db/init-monolithic.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/monolithic:/opt/sql
+      ## 适用于 SpringCloud 微服务模式
+#      - ./db/init-distributed.sql:/docker-entrypoint-initdb.d/init.sql
+#      - ./db/distributed:/opt/sql
