@@ -15,68 +15,58 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.ticketservice.dto.domain;
 
 import lombok.Data;
 
 /**
- * 用户注册请求参数
+ * 动车实体
  */
 @Data
-public class UserRegisterReqDTO {
+public class BulletTrainDTO {
 
     /**
-     * 用户名
+     * 商务座数量
      */
-    private String username;
+    private Integer businessClassQuantity;
 
     /**
-     * 密码
+     * 商务座候选标识
      */
-    private String password;
+    private Boolean businessClassCandidate;
 
     /**
-     * 真实姓名
+     * 商务座价格
      */
-    private String realName;
+    private Integer businessClassPrice;
 
     /**
-     * 证件类型
+     * 一等座数量
      */
-    private Integer idType;
+    private Integer firstClassQuantity;
 
     /**
-     * 证件号
+     * 一等座候选标识
      */
-    private String idCard;
+    private Boolean firstClassCandidate;
 
     /**
-     * 手机号
+     * 一等座价格
      */
-    private String phone;
+    private Integer firstClassPrice;
 
     /**
-     * 邮箱
+     * 二等座数量
      */
-    private String mail;
+    private Integer secondClassQuantity;
 
     /**
-     * 旅客类型
+     * 二等座候选标识
      */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
+    private Boolean secondClassCandidate;
 
     /**
-     * 邮编
+     * 二等座价格
      */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private Integer secondClassPrice;
 }

@@ -15,68 +15,43 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.ticketservice.dto.req;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 /**
- * 用户注册请求参数
+ * 车票分页查询请求参数
  */
 @Data
-public class UserRegisterReqDTO {
+public class TicketPageQueryReqDTO extends Page {
 
     /**
-     * 用户名
+     * 出发地
      */
-    private String username;
+    private String fromStation;
 
     /**
-     * 密码
+     * 目的地
      */
-    private String password;
+    private String toStation;
 
     /**
-     * 真实姓名
+     * 出发日期
      */
-    private String realName;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date departureDate;
 
     /**
-     * 证件类型
+     * 出发站点
      */
-    private Integer idType;
+    private String departure;
 
     /**
-     * 证件号
+     * 到达站点
      */
-    private String idCard;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 邮箱
-     */
-    private String mail;
-
-    /**
-     * 旅客类型
-     */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
-
-    /**
-     * 邮编
-     */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private String arrival;
 }

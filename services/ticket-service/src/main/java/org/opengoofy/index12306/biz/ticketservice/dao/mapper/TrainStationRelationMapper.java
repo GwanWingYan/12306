@@ -15,16 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.messageservice;
+package org.opengoofy.index12306.biz.ticketservice.dao.mapper;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.ticketservice.dao.entity.TrainStationRelationDO;
 
-@SpringBootTest
-class MessageServiceApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
+/**
+ * 列车站点关系持久层
+ */
+public interface TrainStationRelationMapper extends BaseMapper<TrainStationRelationDO> {
 }

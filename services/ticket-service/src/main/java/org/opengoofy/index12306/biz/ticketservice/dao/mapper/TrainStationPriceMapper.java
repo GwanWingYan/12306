@@ -15,15 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice;
+package org.opengoofy.index12306.biz.ticketservice.dao.mapper;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.ticketservice.dao.entity.TrainStationPriceDO;
 
-@SpringBootApplication
-public class TicketServiceApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(TicketServiceApplication.class, args);
-    }
+/**
+ * 列车站点价格持久层
+ */
+public interface TrainStationPriceMapper extends BaseMapper<TrainStationPriceDO> {
 }

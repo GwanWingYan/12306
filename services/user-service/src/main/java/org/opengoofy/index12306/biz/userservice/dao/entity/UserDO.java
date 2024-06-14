@@ -73,10 +73,10 @@ public class UserDO extends BaseDO {
      */
     private Integer userType;
 
-//    /**
-//     * 审核状态
-//     */
-//    private Integer verifyState;
+    // /**
+    // * 审核状态
+    // */
+    // private Integer verifyState;
 
     /**
      * 邮编

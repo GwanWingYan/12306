@@ -15,15 +15,23 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.ticketservice.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
 /**
- * 用户注册请求参数
+ * 车票实体
  */
 @Data
-public class UserRegisterReqDTO {
+@TableName("t_ticket")
+public class TicketDO extends BaseDO {
+
+    /**
+     * id
+     */
+    private Long id;
 
     /**
      * 用户名
@@ -31,52 +39,42 @@ public class UserRegisterReqDTO {
     private String username;
 
     /**
-     * 密码
+     * 列车id
      */
-    private String password;
+    private Long trainId;
 
     /**
-     * 真实姓名
+     * 车厢号
      */
-    private String realName;
+    private String carriageNumber;
 
     /**
-     * 证件类型
+     * 座位号
      */
-    private Integer idType;
+    private String seatNumber;
 
     /**
-     * 证件号
+     * 乘客姓名
      */
-    private String idCard;
+    private String passengerName;
 
     /**
-     * 手机号
+     * 乘客证件类型
      */
-    private String phone;
+    private Integer passengerIdType;
 
     /**
-     * 邮箱
+     * 乘客证件号码
      */
-    private String mail;
+    private String passengerIdCard;
 
     /**
-     * 旅客类型
+     * 乘客手机号
      */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
+    private String passengerPhone;
 
     /**
-     * 邮编
+     * 车票状态
      */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private Integer ticketStatus;
 }

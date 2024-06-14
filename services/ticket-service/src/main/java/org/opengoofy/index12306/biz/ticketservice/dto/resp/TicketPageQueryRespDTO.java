@@ -15,68 +15,54 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.ticketservice.dto.resp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.opengoofy.index12306.biz.ticketservice.dto.domain.BulletTrainDTO;
+
+import java.util.Date;
 
 /**
- * 用户注册请求参数
+ * 车票分页查询返回参数
  */
 @Data
-public class UserRegisterReqDTO {
+public class TicketPageQueryRespDTO {
 
     /**
-     * 用户名
+     * 车次
      */
-    private String username;
+    private String trainNumber;
 
     /**
-     * 密码
+     * 出发时间
      */
-    private String password;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date departureTime;
 
     /**
-     * 真实姓名
+     * 到达时间
      */
-    private String realName;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date arrivalTime;
 
     /**
-     * 证件类型
+     * 历时
      */
-    private Integer idType;
+    private String duration;
 
     /**
-     * 证件号
+     * 出发站点
      */
-    private String idCard;
+    private String departure;
 
     /**
-     * 手机号
+     * 到达站点
      */
-    private String phone;
+    private String arrival;
 
     /**
-     * 邮箱
+     * 高铁属性
      */
-    private String mail;
-
-    /**
-     * 旅客类型
-     */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
-
-    /**
-     * 邮编
-     */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private BulletTrainDTO bulletTrain;
 }

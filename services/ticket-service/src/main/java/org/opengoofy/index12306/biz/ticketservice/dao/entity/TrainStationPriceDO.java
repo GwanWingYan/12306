@@ -15,68 +15,46 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.ticketservice.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
 /**
- * 用户注册请求参数
+ * 列车站点价格实体
  */
 @Data
-public class UserRegisterReqDTO {
+@TableName("t_train_station_price")
+public class TrainStationPriceDO extends BaseDO {
 
     /**
-     * 用户名
+     * id
      */
-    private String username;
+    private Long id;
 
     /**
-     * 密码
+     * 车次id
      */
-    private String password;
+    private Long trainId;
 
     /**
-     * 真实姓名
+     * 座位类型
      */
-    private String realName;
+    private Integer seatType;
 
     /**
-     * 证件类型
+     * 出发站点
      */
-    private Integer idType;
+    private String departure;
 
     /**
-     * 证件号
+     * 到达站点
      */
-    private String idCard;
+    private String arrival;
 
     /**
-     * 手机号
+     * 车票价格
      */
-    private String phone;
-
-    /**
-     * 邮箱
-     */
-    private String mail;
-
-    /**
-     * 旅客类型
-     */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
-
-    /**
-     * 邮编
-     */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private Integer price;
 }

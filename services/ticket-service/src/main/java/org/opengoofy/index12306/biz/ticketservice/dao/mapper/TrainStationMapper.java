@@ -15,15 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.messageservice;
+package org.opengoofy.index12306.biz.ticketservice.dao.mapper;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.ticketservice.dao.entity.TrainStationDO;
 
-@SpringBootApplication
-public class MessageServiceApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(MessageServiceApplication.class, args);
-    }
+/**
+ * 列车站点持久层
+ */
+public interface TrainStationMapper extends BaseMapper<TrainStationDO> {
 }

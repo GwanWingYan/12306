@@ -15,68 +15,36 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.ticketservice.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
 /**
- * 用户注册请求参数
+ * 车站实体
  */
 @Data
-public class UserRegisterReqDTO {
+@TableName("t_station")
+public class StationDO extends BaseDO {
 
     /**
-     * 用户名
+     * id
      */
-    private String username;
+    private Long id;
 
     /**
-     * 密码
+     * 车站名称
      */
-    private String password;
+    private String name;
 
     /**
-     * 真实姓名
+     * 车站编号
      */
-    private String realName;
+    private String code;
 
     /**
-     * 证件类型
+     * 车站城市
      */
-    private Integer idType;
-
-    /**
-     * 证件号
-     */
-    private String idCard;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 邮箱
-     */
-    private String mail;
-
-    /**
-     * 旅客类型
-     */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
-
-    /**
-     * 邮编
-     */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private String city;
 }
