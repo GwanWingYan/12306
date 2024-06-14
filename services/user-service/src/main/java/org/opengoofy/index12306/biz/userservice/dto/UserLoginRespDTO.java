@@ -15,15 +15,32 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice;
+package org.opengoofy.index12306.biz.userservice.dto;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@SpringBootApplication
-public class UserServiceApplication {
+/**
+ * 用户登录返回参数
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserLoginRespDTO {
 
-    public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
-    }
+    /**
+     * 用户名
+     */
+    private String username;
+
+    /**
+     * 真实姓名
+     */
+    private String realName;
+
+    /**
+     * Token
+     */
+    private String accessToken;
 }

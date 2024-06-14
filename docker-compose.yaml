@@ -12,3 +12,8 @@ services:
       ## 适用于 SpringCloud 微服务模式
 #      - ./db/init-distributed.sql:/docker-entrypoint-initdb.d/init.sql
 #      - ./db/distributed:/opt/sql
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    command: /bin/sh -c "redis-server --requirepass 123456"
