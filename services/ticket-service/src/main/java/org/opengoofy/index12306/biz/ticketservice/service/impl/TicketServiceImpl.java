@@ -42,7 +42,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Objects;
 
-import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKeyConstant.TRAIN_STATION_REMAINING_TICKET;
+import static org.opengoofy.index12306.biz.ticketservice.common.enums.RedisKeyConstant.TRAIN_STATION_REMAINING_TICKET;
 
 /**
  * 车票接口实现

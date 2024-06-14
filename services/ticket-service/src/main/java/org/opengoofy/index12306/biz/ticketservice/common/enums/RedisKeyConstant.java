@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.common.constant;
+package org.opengoofy.index12306.biz.ticketservice.common.enums;
 
 /**
  * Redis Key 定义常量类

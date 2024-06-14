@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 
 import static cn.hutool.core.date.DatePattern.NORM_DATETIME_MINUTE_FORMAT;
 import static org.opengoofy.index12306.biz.ticketservice.common.constant.Index12306Constant.ADVANCE_TICKET_DAY;
-import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKeyConstant.TRAIN_STATION_DETAIL;
+import static org.opengoofy.index12306.biz.ticketservice.common.enums.RedisKeyConstant.TRAIN_STATION_DETAIL;
 
 /**
  * 站点详细信息定时任务
