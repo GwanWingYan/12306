@@ -15,33 +15,28 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dao.entity;
+package org.opengoofy.index12306.biz.userservice.dto.resp;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+
+import java.util.Date;
 
 /**
- * 用户信息实体
+ * 乘车人返回参数
  */
 @Data
-@TableName("t_user")
-public class UserDO extends BaseDO {
+public class PassengerRespDTO {
 
     /**
-     * id
+     * 乘车人id
      */
-    private Long id;
+    private String id;
 
     /**
      * 用户名
      */
     private String username;
-
-    /**
-     * 密码
-     */
-    private String password;
 
     /**
      * 真实姓名
@@ -54,9 +49,14 @@ public class UserDO extends BaseDO {
     private Integer idType;
 
     /**
-     * 证件号
+     * 证件号码
      */
     private String idCard;
+
+    /**
+     * 优惠类型
+     */
+    private Integer discountType;
 
     /**
      * 手机号
@@ -64,27 +64,13 @@ public class UserDO extends BaseDO {
     private String phone;
 
     /**
-     * 邮箱
+     * 添加日期
      */
-    private String mail;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date createDate;
 
     /**
-     * 旅客类型
-     */
-    private Integer userType;
-
-     /**
      * 审核状态
      */
-     private Integer verifyStatus;
-
-    /**
-     * 邮编
-     */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private Integer verifyStatus;
 }

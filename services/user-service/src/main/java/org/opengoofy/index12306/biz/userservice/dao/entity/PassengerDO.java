@@ -15,19 +15,25 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.userservice.dao.entity;
 
-import lombok.AllArgsConstructor;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+
+import java.util.Date;
 
 /**
- * 用户登录返回参数
+ * 乘车人实体
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class UserLoginRespDTO {
+@TableName("t_passenger")
+public class PassengerDO extends BaseDO {
+
+    /**
+     * id
+     */
+    private Long id;
 
     /**
      * 用户名
@@ -40,7 +46,32 @@ public class UserLoginRespDTO {
     private String realName;
 
     /**
-     * Token
+     * 证件类型
      */
-    private String accessToken;
+    private Integer idType;
+
+    /**
+     * 证件号码
+     */
+    private String idCard;
+
+    /**
+     * 优惠类型
+     */
+    private Integer discountType;
+
+    /**
+     * 手机号
+     */
+    private String phone;
+
+    /**
+     * 添加日期
+     */
+    private Date createDate;
+
+    /**
+     * 审核状态
+     */
+    private Integer verifyStatus;
 }

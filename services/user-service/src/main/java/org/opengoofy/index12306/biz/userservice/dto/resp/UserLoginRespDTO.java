@@ -15,15 +15,19 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.userservice.dto.resp;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * 用户注册请求参数
+ * 用户登录返回参数
  */
 @Data
-public class UserRegisterReqDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserLoginRespDTO {
 
     /**
      * 用户名
@@ -31,52 +35,12 @@ public class UserRegisterReqDTO {
     private String username;
 
     /**
-     * 密码
-     */
-    private String password;
-
-    /**
      * 真实姓名
      */
     private String realName;
 
     /**
-     * 证件类型
+     * Token
      */
-    private Integer idType;
-
-    /**
-     * 证件号
-     */
-    private String idCard;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 邮箱
-     */
-    private String mail;
-
-    /**
-     * 旅客类型
-     */
-    private Integer userType;
-
-    // /**
-    // * 审核状态
-    // */
-    // private Integer verifyState;
-
-    /**
-     * 邮编
-     */
-    private String postCode;
-
-    /**
-     * 地址
-     */
-    private String address;
+    private String accessToken;
 }

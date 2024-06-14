@@ -20,9 +20,11 @@ package org.opengoofy.index12306.biz.userservice.controller;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
-import org.opengoofy.index12306.biz.userservice.dto.UserRegisterReqDTO;
-import org.opengoofy.index12306.biz.userservice.dto.UserRegisterRespDTO;
+import org.opengoofy.index12306.biz.userservice.dto.req.UserRegisterReqDTO;
+import org.opengoofy.index12306.biz.userservice.dto.resp.UserQueryRespDTO;
+import org.opengoofy.index12306.biz.userservice.dto.resp.UserRegisterRespDTO;
 import org.opengoofy.index12306.biz.userservice.service.UserLoginService;
+import org.opengoofy.index12306.biz.userservice.service.UserService;
 import org.opengoofy.index12306.framework.starter.convention.result.Result;
 import org.opengoofy.index12306.framework.starter.web.Results;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,6 +41,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserInfoController {
 
     private final UserLoginService userLoginService;
+    private final UserService userService;
+
+    /**
+     * 根据用户名查询用户信息
+     */
+    @GetMapping("/api/user-service/query")
+    public Result<UserQueryRespDTO> queryUserByUsername(@RequestParam("username") @NotEmpty String username) {
+        return Results.success(userService.queryUserByUsername(username));
+    }
 
     /**
      * 检查用户名是否已存在

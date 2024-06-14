@@ -18,49 +18,50 @@
 package org.opengoofy.index12306.biz.userservice.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.opengoofy.index12306.biz.userservice.dto.req.UserLoginReqDTO;
-import org.opengoofy.index12306.biz.userservice.dto.resp.UserLoginRespDTO;
-import org.opengoofy.index12306.biz.userservice.service.UserLoginService;
+import org.opengoofy.index12306.biz.userservice.dto.req.PassengerReqDTO;
+import org.opengoofy.index12306.biz.userservice.dto.resp.PassengerRespDTO;
+import org.opengoofy.index12306.biz.userservice.service.PassengerService;
 import org.opengoofy.index12306.framework.starter.convention.result.Result;
 import org.opengoofy.index12306.framework.starter.web.Results;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
- * 用户登录控制层
+ * 乘车人控制层
  */
 @RestController
 @RequiredArgsConstructor
-public class UserLoginController {
+public class PassengerController {
 
-    private final UserLoginService userLoginService;
+    private final PassengerService passengerService;
 
     /**
-     * 用户登录
+     * 根据用户名查询乘车人列表
      */
-    @PostMapping("/api/user-service/v1/login")
-    public Result<UserLoginRespDTO> login(@RequestBody UserLoginReqDTO requestParam) {
-        return Results.success(userLoginService.login(requestParam));
+    @GetMapping("/api/user-service/passenger/query")
+    public Result<List<PassengerRespDTO>> listPassengerQuery(String username) {
+        return Results.success(passengerService.listPassengerQuery(username));
     }
 
     /**
-     * 通过 Token 检查用户是否登录
+     * 新增乘车人
      */
-    @GetMapping("/api/user-service/check-login")
-    public Result<UserLoginRespDTO> checkLogin(@RequestParam("accessToken") String accessToken) {
-        UserLoginRespDTO result = userLoginService.checkLogin(accessToken);
-        return Results.success(result);
+    @PostMapping("/api/user-service/passenger/save")
+    public Result<Void> savePassenger(@RequestBody PassengerReqDTO requestParam) {
+        passengerService.savePassenger(requestParam);
+        return Results.success();
     }
 
     /**
-     * 用户退出登录
+     * 修改乘车人
      */
-    @GetMapping("/api/user-service/logout")
-    public Result<Void> logout(@RequestParam(required = false) String accessToken) {
-        userLoginService.logout(accessToken);
+    @PostMapping("/api/user-service/passenger/update")
+    public Result<Void> updatePassenger(@RequestBody PassengerReqDTO requestParam) {
+        passengerService.updatePassenger(requestParam);
         return Results.success();
     }
 }

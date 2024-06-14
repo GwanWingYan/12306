@@ -15,27 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dto;
+package org.opengoofy.index12306.biz.userservice.dao.mapper;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.userservice.dao.entity.PassengerDO;
 
 /**
- * 用户登录请求参数
+ * 乘车人持久层
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class UserLoginReqDTO {
-
-    /**
-     * 用户名
-     */
-    private String username;
-
-    /**
-     * 密码
-     */
-    private String password;
+public interface PassengerMapper extends BaseMapper<PassengerDO> {
 }
