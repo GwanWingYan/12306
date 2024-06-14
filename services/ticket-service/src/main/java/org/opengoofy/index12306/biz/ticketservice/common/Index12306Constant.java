@@ -15,46 +15,15 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.dao.entity;
-
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+package org.opengoofy.index12306.biz.ticketservice.common.constant;
 
 /**
- * 车站实体
+ * 系统级公共常量
  */
-@Data
-@TableName("t_station")
-public class StationDO extends BaseDO {
+public final class Index12306Constant {
 
     /**
-     * id
+     * 提前买票天数
      */
-    private Long id;
-
-    /**
-     * 车站编码
-     */
-    private String code;
-
-    /**
-     * 车站名称
-     */
-    private String name;
-
-    /**
-     * 拼音
-     */
-    private String spell;
-
-    /**
-     * 地区编号
-     */
-    private String region;
-
-    /**
-     * 地区名称
-     */
-    private String regionName;
+    public static final int ADVANCE_TICKET_DAY = 15;
 }

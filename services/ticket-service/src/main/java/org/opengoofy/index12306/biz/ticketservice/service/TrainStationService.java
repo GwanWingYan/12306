@@ -15,46 +15,22 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.dao.entity;
+package org.opengoofy.index12306.biz.ticketservice.service;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+import org.opengoofy.index12306.biz.ticketservice.dto.resp.TrainStationQueryRespDTO;
+
+import java.util.List;
 
 /**
- * 车站实体
+ * 列车站点接口层
  */
-@Data
-@TableName("t_station")
-public class StationDO extends BaseDO {
+public interface TrainStationService {
 
     /**
-     * id
+     * 根据列车 ID 查询站点信息
+     *
+     * @param trainId 列车 ID
+     * @return 列车经停站信息
      */
-    private Long id;
-
-    /**
-     * 车站编码
-     */
-    private String code;
-
-    /**
-     * 车站名称
-     */
-    private String name;
-
-    /**
-     * 拼音
-     */
-    private String spell;
-
-    /**
-     * 地区编号
-     */
-    private String region;
-
-    /**
-     * 地区名称
-     */
-    private String regionName;
+    List<TrainStationQueryRespDTO> listTrainStationQuery(String trainId);
 }

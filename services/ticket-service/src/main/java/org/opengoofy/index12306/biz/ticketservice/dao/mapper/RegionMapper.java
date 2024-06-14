@@ -15,46 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.dao.entity;
+package org.opengoofy.index12306.biz.ticketservice.dao.mapper;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.ticketservice.dao.entity.RegionDO;
 
 /**
- * 车站实体
+ * 地区持久层
  */
-@Data
-@TableName("t_station")
-public class StationDO extends BaseDO {
-
-    /**
-     * id
-     */
-    private Long id;
-
-    /**
-     * 车站编码
-     */
-    private String code;
-
-    /**
-     * 车站名称
-     */
-    private String name;
-
-    /**
-     * 拼音
-     */
-    private String spell;
-
-    /**
-     * 地区编号
-     */
-    private String region;
-
-    /**
-     * 地区名称
-     */
-    private String regionName;
+public interface RegionMapper extends BaseMapper<RegionDO> {
 }

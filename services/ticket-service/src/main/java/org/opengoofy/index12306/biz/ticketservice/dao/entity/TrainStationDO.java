@@ -55,15 +55,15 @@ public class TrainStationDO extends BaseDO {
      */
     private String arrival;
 
-    // /**
-    // * 起始城市
-    // */
-    // private String startCity;
-    //
-    // /**
-    // * 终点城市
-    // */
-    // private String endCity;
+    /**
+     * 起始城市
+     */
+    private String startRegion;
+
+    /**
+     * 终点城市
+     */
+    private String endRegion;
 
     /**
      * 到站时间

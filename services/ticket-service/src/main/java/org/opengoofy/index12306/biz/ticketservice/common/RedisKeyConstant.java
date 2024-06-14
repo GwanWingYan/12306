@@ -15,46 +15,30 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.dao.entity;
-
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+package org.opengoofy.index12306.biz.ticketservice.common.constant;
 
 /**
- * 车站实体
+ * Redis Key 定义常量类
  */
-@Data
-@TableName("t_station")
-public class StationDO extends BaseDO {
+public final class RedisKeyConstant {
 
     /**
-     * id
+     * 站点查询，Key Prefix + 起始城市_终点城市_日期
      */
-    private Long id;
+    public static final String REGION_TRAIN_STATION = "region_train_station:";
 
     /**
-     * 车站编码
+     * 站点余票查询，Key Prefix + 列车ID_起始站点_终点
      */
-    private String code;
+    public static final String TRAIN_STATION_REMAINING_TICKET = "train_station_remaining_ticket:";
 
     /**
-     * 车站名称
+     * 站点详细信息查询，Key Prefix + 列车ID_起始站点_终点
      */
-    private String name;
+    public static final String TRAIN_STATION_DETAIL = "train_station_detail:";
 
     /**
-     * 拼音
+     * 列车路线信息查询，Key Prefix + 列车ID
      */
-    private String spell;
-
-    /**
-     * 地区编号
-     */
-    private String region;
-
-    /**
-     * 地区名称
-     */
-    private String regionName;
+    public static final String TRAIN_STATION_STOPOVER_DETAIL = "train_station_stopover_detail:";
 }

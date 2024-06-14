@@ -17,7 +17,7 @@
 
 package org.opengoofy.index12306.biz.ticketservice.dto.req;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.opengoofy.index12306.framework.starter.convention.page.PageRequest;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,7 +27,7 @@ import java.util.Date;
  * 车票分页查询请求参数
  */
 @Data
-public class TicketPageQueryReqDTO extends Page {
+public class TicketPageQueryReqDTO extends PageRequest {
 
     /**
      * 出发地
