@@ -2,7 +2,7 @@ services:
   mysql:
     image: mysql:5.7.36
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
     volumes:
@@ -15,7 +15,7 @@ services:
   redis:
     image: redis
     ports:
-      - 6379:6379
+      - "6379:6379"
     command: /bin/sh -c "redis-server --requirepass 123456"
   nacos:
     image: nacos/nacos-server:v2.1.1
@@ -26,3 +26,24 @@ services:
       - "9849:9849"
     environment:
       - MODE=standalone
+  rocketmq-server:
+    image: foxiswho/rocketmq:server-4.5.1
+    ports:
+      - "9876:9876"
+  rocketmq-broker:
+    image: foxiswho/rocketmq:broker-4.5.1
+    ports:
+      - "10911:10911"
+      - "10909:10909"
+    volumes:
+      - ./rocketmq/broker.conf:/etc/rocketmq/broker.conf
+    environment:
+      - "NAMESRV_ADDR=rocketmq-server:9876"
+      - "JAVA_OPTS=-Duser.home=/opt"
+      - "JAVA_OPT_EXT=-server -Xms512m -Xmx512m"
+  rocketmq-console:
+    image: pangliang/rocketmq-console-ng
+    ports:
+      - "8088:8080"
+    environment:
+      - "JAVA_OPTS=-Drocketmq.config.namesrvAddr=rocketmq-server:9876 -Drocketmq.config.isVIPChannel=false"
