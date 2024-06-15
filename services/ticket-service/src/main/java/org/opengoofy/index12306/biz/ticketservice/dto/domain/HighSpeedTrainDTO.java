@@ -15,69 +15,58 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dao.entity;
+package org.opengoofy.index12306.biz.ticketservice.dto.domain;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
-
-import java.util.Date;
 
 /**
- * 乘车人实体
+ * 动车实体
  */
 @Data
-@TableName("t_passenger")
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class PassengerDO extends BaseDO {
+public class HighSpeedTrainDTO {
 
     /**
-     * id
+     * 商务座数量
      */
-    private Long id;
+    private Integer businessClassQuantity;
 
     /**
-     * 用户名
+     * 商务座候选标识
      */
-    private String username;
+    private Boolean businessClassCandidate;
 
     /**
-     * 真实姓名
+     * 商务座价格
      */
-    private String realName;
+    private Integer businessClassPrice;
 
     /**
-     * 证件类型
+     * 一等座数量
      */
-    private Integer idType;
+    private Integer firstClassQuantity;
 
     /**
-     * 证件号码
+     * 一等座候选标识
      */
-    private String idCard;
+    private Boolean firstClassCandidate;
 
     /**
-     * 优惠类型
+     * 一等座价格
      */
-    private Integer discountType;
+    private Integer firstClassPrice;
 
     /**
-     * 手机号
+     * 二等座数量
      */
-    private String phone;
+    private Integer secondClassQuantity;
 
     /**
-     * 添加日期
+     * 二等座候选标识
      */
-    private Date createDate;
+    private Boolean secondClassCandidate;
 
     /**
-     * 审核状态
+     * 二等座价格
      */
-    private Integer verifyStatus;
+    private Integer secondClassPrice;
 }
