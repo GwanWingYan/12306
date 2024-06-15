@@ -99,6 +99,7 @@ public abstract class AbstractTrainPurchaseTicketTemplate implements Application
                             .ifPresent(passenger -> {
                                 each.setIdCard(passenger.getIdCard());
                                 each.setPhone(passenger.getPhone());
+                                each.setUserType(passenger.getDiscountType());
                                 each.setIdType(passenger.getIdType());
                                 each.setRealName(passenger.getRealName());
                             });
