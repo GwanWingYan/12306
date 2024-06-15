@@ -20,6 +20,7 @@ package org.opengoofy.index12306.biz.ticketservice.service;
 import org.opengoofy.index12306.biz.ticketservice.dto.req.PurchaseTicketReqDTO;
 import org.opengoofy.index12306.biz.ticketservice.dto.req.TicketPageQueryReqDTO;
 import org.opengoofy.index12306.biz.ticketservice.dto.resp.TicketPageQueryRespDTO;
+import org.opengoofy.index12306.biz.ticketservice.dto.resp.TicketPurchaseRespDTO;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /**
@@ -41,5 +42,5 @@ public interface TicketService {
      * @param requestParam 车票购买请求参数
      * @return 订单号
      */
-    String purchaseTickets(@RequestBody PurchaseTicketReqDTO requestParam);
+    TicketPurchaseRespDTO purchaseTickets(@RequestBody PurchaseTicketReqDTO requestParam);
 }
