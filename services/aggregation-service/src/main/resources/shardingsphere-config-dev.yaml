@@ -22,4 +22,4 @@ rules:
           sharding-count: 16
 
 props:
-  sql-show: true
+  sql-show: false
