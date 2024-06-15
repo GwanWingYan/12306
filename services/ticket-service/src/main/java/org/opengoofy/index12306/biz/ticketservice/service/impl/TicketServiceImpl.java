@@ -115,6 +115,9 @@ public class TicketServiceImpl implements TicketService {
             result.setArrival(each.getArrival());
             result.setDepartureFlag(each.getDepartureFlag());
             result.setArrivalFlag(each.getArrivalFlag());
+            result.setTrainType(trainDO.getTrainType());
+            result.setSaleStatus(trainDO.getSaleStatus());
+            result.setSaleTime(trainDO.getSaleTime());
             if (StrUtil.isNotBlank(trainDO.getTrainBrand())) {
                 trainBrandSet.addAll(TrainTagEnum.findNameByCode(StrUtil.split(trainDO.getTrainBrand(), ",")));
             }
