@@ -17,3 +17,12 @@ services:
     ports:
       - 6379:6379
     command: /bin/sh -c "redis-server --requirepass 123456"
+  nacos:
+    image: nacos/nacos-server:v2.1.1
+    restart: always
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    environment:
+      - MODE=standalone

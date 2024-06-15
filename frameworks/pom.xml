@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>base</module>
+        <module>bizs</module>
         <module>cache</module>
         <module>common</module>
         <module>convention</module>

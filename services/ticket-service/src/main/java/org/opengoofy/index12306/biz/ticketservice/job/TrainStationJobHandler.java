@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static org.opengoofy.index12306.biz.ticketservice.common.enums.RedisKeyConstant.TRAIN_STATION_STOPOVER_DETAIL;
+import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKeyConstant.TRAIN_STATION_STOPOVER_DETAIL;
 
 /**
  * 列车路线信息定时任务
