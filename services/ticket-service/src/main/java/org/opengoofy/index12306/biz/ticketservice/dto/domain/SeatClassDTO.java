@@ -15,55 +15,41 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.orderservice.dto.resp;
+package org.opengoofy.index12306.biz.ticketservice.dto.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
-import java.util.List;
+import java.math.BigDecimal;
 
 /**
- * 车票订单详情返回参数
+ * 席别类型实体
  */
 @Data
-public class TicketOrderDetailRespDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class SeatClassDTO {
 
     /**
-     * 出发站点
+     * 席别类型
      */
-    private String departure;
+    private Integer type;
 
     /**
-     * 到达站点
+     * 席别数量
      */
-    private String arrival;
+    private Integer quantity;
 
     /**
-     * 乘车日期
+     * 席别价格
      */
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date ridingDate;
+    private BigDecimal price;
 
     /**
-     * 列车车次
+     * 席别候补标识
      */
-    private String trainNumber;
-
-    /**
-     * 出发时间
-     */
-    @JsonFormat(pattern = "HH:mm", timezone = "GMT+8")
-    private Date departureTime;
-
-    /**
-     * 到达时间
-     */
-    @JsonFormat(pattern = "HH:mm", timezone = "GMT+8")
-    private Date arrivalTime;
-
-    /**
-     * 乘车人订单详情
-     */
-    private List<TicketOrderPassengerDetailRespDTO> passengerDetails;
+    private Boolean candidate;
 }
