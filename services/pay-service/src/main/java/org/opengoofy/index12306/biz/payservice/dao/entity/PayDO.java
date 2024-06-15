@@ -48,12 +48,12 @@ public class PayDO extends BaseDO {
     /**
      * 支付渠道
      */
-    private String channel;
+    private Integer channel;
 
     /**
      * 支付环境
      */
-    private String tradeType;
+    private Integer tradeType;
 
     /**
      * 订单标题
@@ -89,5 +89,5 @@ public class PayDO extends BaseDO {
     /**
      * 支付状态
      */
-    private String status;
+    private Integer status;
 }

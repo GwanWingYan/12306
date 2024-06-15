@@ -31,7 +31,7 @@ public abstract class AbstractPayRequest implements PayRequest {
      */
     @Getter
     @Setter
-    private String tradeType;
+    private Integer tradeType;
 
     /**
      * 订单号
@@ -45,7 +45,7 @@ public abstract class AbstractPayRequest implements PayRequest {
      */
     @Getter
     @Setter
-    private String channel;
+    private Integer channel;
 
     /**
      * 商户订单号

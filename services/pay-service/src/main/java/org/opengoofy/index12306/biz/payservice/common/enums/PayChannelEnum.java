@@ -15,18 +15,28 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.payservice.common;
+package org.opengoofy.index12306.biz.payservice.common.enums;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /**
- * 交易环境枚举
+ * 支付渠道枚举
  */
-public enum PayTradeTypeEnum {
+@RequiredArgsConstructor
+public enum PayChannelEnum {
 
-    NATIVE,
+    /**
+     * 支付宝
+     */
+    ALI_PAY(0, "ALI_PAY", "支付宝");
 
-    JSAPI,
+    @Getter
+    private final Integer code;
 
-    MWEB,
+    @Getter
+    private final String name;
 
-    DAPP
+    @Getter
+    private final String value;
 }

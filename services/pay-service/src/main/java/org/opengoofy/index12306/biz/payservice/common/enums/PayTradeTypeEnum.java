@@ -15,51 +15,51 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.payservice.dto.base;
+package org.opengoofy.index12306.biz.payservice.common.enums;
 
-import lombok.Data;
-import org.opengoofy.index12306.biz.payservice.common.enums.PayChannelEnum;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-import java.util.Date;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
- * 支付宝回调请求入参
+ * 交易环境枚举
  */
-@Data
-public final class AliPayCallbackRequest extends AbstractPayCallbackRequest {
+@RequiredArgsConstructor
+public enum PayTradeTypeEnum {
 
     /**
-     * 支付渠道
+     * 扫码支付环境
      */
-    private String channel;
+    NATIVE(0),
 
     /**
-     * 支付状态
+     * 移动端 Web 应用中支付环境
      */
-    private String tradeStatus;
+    JSAPI(1),
 
     /**
-     * 支付凭证号
+     * 手机浏览器中打开的H5网页支付环境
      */
-    private String tradeNo;
+    MWEB(2),
 
     /**
-     * 买家付款时间
+     * 去中心化应用程序中支付环境
      */
-    private Date gmtPayment;
+    DAPP(3);
+
+    @Getter
+    private final Integer code;
 
     /**
-     * 买家付款金额
+     * 根据名称查找码值
      */
-    private Integer buyerPayAmount;
-
-    @Override
-    public AliPayCallbackRequest getAliPayCallBackRequest() {
-        return this;
-    }
-
-    @Override
-    public String buildMark() {
-        return PayChannelEnum.ALI_PAY.getName();
+    public static String findNameByCode(Integer code) {
+        return Arrays.stream(PayTradeTypeEnum.values())
+                .filter(each -> Objects.equals(each.getCode(), code))
+                .findFirst()
+                .map(PayTradeTypeEnum::name)
+                .orElse(null);
     }
 }

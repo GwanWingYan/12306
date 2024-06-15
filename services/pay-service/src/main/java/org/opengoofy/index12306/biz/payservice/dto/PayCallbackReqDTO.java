@@ -81,7 +81,7 @@ public class PayCallbackReqDTO {
     /**
      * 支付状态
      */
-    private String status;
+    private Integer status;
 
     /**
      * 商户订单号

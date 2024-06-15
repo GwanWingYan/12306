@@ -15,51 +15,20 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.payservice.dto.base;
-
-import lombok.Data;
-import org.opengoofy.index12306.biz.payservice.common.enums.PayChannelEnum;
-
-import java.util.Date;
+package org.opengoofy.index12306.biz.payservice.common.constant;
 
 /**
- * 支付宝回调请求入参
+ * RocketMQ 支付服务常量类
  */
-@Data
-public final class AliPayCallbackRequest extends AbstractPayCallbackRequest {
+public final class PayRocketMQConstant {
 
     /**
-     * 支付渠道
+     * 支付服务相关业务 Topic Key
      */
-    private String channel;
+    public static final String PAY_GLOBAL_TOPIC_KEY = "index12306_pay-service_topic";
 
     /**
-     * 支付状态
+     * 支付结果回调订单 Tag Key
      */
-    private String tradeStatus;
-
-    /**
-     * 支付凭证号
-     */
-    private String tradeNo;
-
-    /**
-     * 买家付款时间
-     */
-    private Date gmtPayment;
-
-    /**
-     * 买家付款金额
-     */
-    private Integer buyerPayAmount;
-
-    @Override
-    public AliPayCallbackRequest getAliPayCallBackRequest() {
-        return this;
-    }
-
-    @Override
-    public String buildMark() {
-        return PayChannelEnum.ALI_PAY.getName();
-    }
+    public static final String PAY_RESULT_CALLBACK_ORDER_TAG_KEY = "index12306_pay-service_pay-result-callback-order_tag";
 }

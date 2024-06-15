@@ -15,51 +15,49 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.payservice.dto.base;
+package org.opengoofy.index12306.biz.payservice.mq.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.opengoofy.index12306.biz.payservice.common.enums.PayChannelEnum;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.UUID;
 
 /**
- * 支付宝回调请求入参
+ * 消息体包装器
  */
 @Data
-public final class AliPayCallbackRequest extends AbstractPayCallbackRequest {
+@Builder
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
+@RequiredArgsConstructor
+public final class MessageWrapper<T> implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     /**
-     * 支付渠道
+     * 消息发送 Keys
      */
-    private String channel;
+    @NonNull
+    private String keys;
 
     /**
-     * 支付状态
+     * 消息体
      */
-    private String tradeStatus;
+    @NonNull
+    private T message;
 
     /**
-     * 支付凭证号
+     * 唯一标识，用于客户端幂等验证
      */
-    private String tradeNo;
+    private String uuid = UUID.randomUUID().toString();
 
     /**
-     * 买家付款时间
+     * 消息发送时间
      */
-    private Date gmtPayment;
-
-    /**
-     * 买家付款金额
-     */
-    private Integer buyerPayAmount;
-
-    @Override
-    public AliPayCallbackRequest getAliPayCallBackRequest() {
-        return this;
-    }
-
-    @Override
-    public String buildMark() {
-        return PayChannelEnum.ALI_PAY.getName();
-    }
+    private Long timestamp = System.currentTimeMillis();
 }

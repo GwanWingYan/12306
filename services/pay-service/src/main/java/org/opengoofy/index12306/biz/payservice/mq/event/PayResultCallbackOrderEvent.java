@@ -15,66 +15,81 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.payservice.dto;
+package org.opengoofy.index12306.biz.payservice.mq.event;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.opengoofy.index12306.biz.payservice.dto.base.AbstractPayRequest;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 支付回调请求命令
+ * 支付结果回调订单服务事件
  */
 @Data
-public final class PayCallbackCommand extends AbstractPayRequest {
+@NoArgsConstructor
+@AllArgsConstructor
+public final class PayResultCallbackOrderEvent {
+
+    /**
+     * id
+     */
+    private Long id;
+
+    /**
+     * 订单号
+     */
+    private String orderSn;
+
+    /**
+     * 商户订单号
+     */
+    private String outOrderSn;
 
     /**
      * 支付渠道
      */
-    private Integer channel;
+    private String channel;
 
     /**
-     * 支付状态
+     * 支付环境
      */
-    @JsonAlias("trade_status")
-    private String tradeStatus;
+    private String tradeType;
 
     /**
-     * 支付凭证号
+     * 订单标题
      */
-    @JsonAlias("trade_no")
+    private String subject;
+
+    /**
+     * 交易凭证号
+     */
     private String tradeNo;
-
-    /**
-     * 买家付款时间
-     */
-    @JsonAlias("gmt_payment")
-    private Date gmtPayment;
-
-    /**
-     * 买家付款金额
-     */
-    @JsonAlias("buyer_pay_amount")
-    private BigDecimal buyerPayAmount;
 
     /**
      * 商户订单号
      * 由商家自定义，64个字符以内，仅支持字母、数字、下划线且需保证在商户端不重复
      */
-    @JsonAlias("out_trade_no")
-    private String outTradeNo;
+    private String orderRequestId;
 
     /**
-     * 订单总金额
-     * 单位为元，精确到小数点后两位，取值范围：[0.01,100000000]
+     * 交易总金额
      */
     private BigDecimal totalAmount;
 
     /**
-     * 订单标题
-     * 注意：不可使用特殊字符，如 /，=，& 等
+     * 付款时间
      */
-    private String subject;
+    private Date gmtPayment;
+
+    /**
+     * 支付金额
+     */
+    private BigDecimal payAmount;
+
+    /**
+     * 支付状态
+     */
+    private String status;
 }
