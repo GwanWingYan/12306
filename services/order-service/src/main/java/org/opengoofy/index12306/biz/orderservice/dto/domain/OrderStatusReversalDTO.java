@@ -15,51 +15,29 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.orderservice.dto;
+package org.opengoofy.index12306.biz.orderservice.dto.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-
-import java.util.Date;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 /**
- * 车票订单创建请求参数
+ * 订单状态反转实体
  */
 @Data
-public class TicketOrderCreateReqDTO {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public final class OrderStatusReversalDTO {
 
     /**
-     * 用户名
+     * 订单号
      */
-    private String username;
+    private String orderSn;
 
     /**
-     * 车次 ID
+     * 订单反转后状态
      */
-    private Long trainId;
-
-    /**
-     * 出发站点
-     */
-    private String departure;
-
-    /**
-     * 到达站点
-     */
-    private String arrival;
-
-    /**
-     * 订单来源
-     */
-    private Integer source;
-
-    /**
-     * 下单时间
-     */
-    private Date orderTime;
-
-    /**
-     * 订单明细
-     */
-    private List<TicketOrderItemCreateReqDTO> ticketOrderItems;
+    private Integer orderStatus;
 }
