@@ -18,7 +18,6 @@
 package org.opengoofy.index12306.biz.ticketservice.service.handler.ticket.dto;
 
 import lombok.Data;
-import org.opengoofy.index12306.biz.ticketservice.dto.domain.PassengerInfoDTO;
 
 /**
  * 列车购票出参
@@ -27,9 +26,39 @@ import org.opengoofy.index12306.biz.ticketservice.dto.domain.PassengerInfoDTO;
 public class TrainPurchaseTicketRespDTO {
 
     /**
-     * 乘车人信息
+     * 乘车人 ID
      */
-    private PassengerInfoDTO passengerInfo;
+    private String passengerId;
+
+    /**
+     * 乘车人姓名
+     */
+    private String realName;
+
+    /**
+     * 乘车人证件类型
+     */
+    private Integer idType;
+
+    /**
+     * 乘车人证件号
+     */
+    private String idCard;
+
+    /**
+     * 乘车人手机号
+     */
+    private String phone;
+
+    /**
+     * 用户类型 0：成人 1：儿童 2：学生 3：残疾军人
+     */
+    private Integer userType;
+
+    /**
+     * 席别类型
+     */
+    private Integer seatType;
 
     /**
      * 车厢号

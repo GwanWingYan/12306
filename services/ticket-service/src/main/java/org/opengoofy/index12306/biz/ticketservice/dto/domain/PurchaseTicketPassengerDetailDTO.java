@@ -15,31 +15,23 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.dto.resp;
+package org.opengoofy.index12306.biz.ticketservice.dto.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
- * 车票购买返回参数
+ * 购票乘车人详情实体
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class TicketPurchaseRespDTO {
+public class PurchaseTicketPassengerDetailDTO {
 
     /**
-     * 订单号
+     * 乘车人 ID
      */
-    private String orderSn;
+    private String passengerId;
 
     /**
-     * 乘车人订单详情
+     * 座位类型
      */
-    private List<TicketOrderDetailRespDTO> ticketOrderDetails;
+    private Integer seatType;
 }
