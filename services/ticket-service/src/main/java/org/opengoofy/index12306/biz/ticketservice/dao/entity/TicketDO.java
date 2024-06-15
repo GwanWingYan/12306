@@ -18,13 +18,19 @@
 package org.opengoofy.index12306.biz.ticketservice.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
 /**
  * 车票实体
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @TableName("t_ticket")
 public class TicketDO extends BaseDO {
 
