@@ -37,6 +37,11 @@ public class TicketOrderItemCreateRemoteReqDTO {
     private String carriageNumber;
 
     /**
+     * 座位类型
+     */
+    private Integer seatType;
+
+    /**
      * 座位号
      */
     private String seatNumber;
@@ -65,4 +70,9 @@ public class TicketOrderItemCreateRemoteReqDTO {
      * 订单金额
      */
     private Integer amount;
+
+    /**
+     * 车票类型
+     */
+    private Integer ticketType;
 }

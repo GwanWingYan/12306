@@ -19,12 +19,21 @@ package org.opengoofy.index12306.biz.orderservice.service;
 
 import org.opengoofy.index12306.biz.orderservice.dto.domain.OrderStatusReversalDTO;
 import org.opengoofy.index12306.biz.orderservice.dto.req.TicketOrderCreateReqDTO;
+import org.opengoofy.index12306.biz.orderservice.dto.resp.TicketOrderDetailRespDTO;
 import org.opengoofy.index12306.biz.orderservice.mq.event.PayResultCallbackOrderEvent;
 
 /**
  * 订单接口层
  */
 public interface OrderService {
+
+    /**
+     * 查询火车票订单详情
+     *
+     * @param orderSn 订单号
+     * @return 订单详情
+     */
+    TicketOrderDetailRespDTO queryTicketOrder(String orderSn);
 
     /**
      * 创建火车票订单

@@ -15,77 +15,59 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.remote.dto;
+package org.opengoofy.index12306.biz.orderservice.dto.resp;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-import java.util.List;
-
 /**
- * 车票订单创建请求参数
+ * 车票订单详情返回参数
  */
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class TicketOrderCreateRemoteReqDTO {
+public class TicketOrderPassengerDetailRespDTO {
 
     /**
-     * 用户名
+     * 席别类型
      */
-    private String username;
+    private Integer seatType;
 
     /**
-     * 车次 ID
+     * 车厢号
      */
-    private Long trainId;
+    private String carriageNumber;
 
     /**
-     * 出发站点
+     * 座位号
      */
-    private String departure;
+    private String seatNumber;
 
     /**
-     * 到达站点
+     * 真实姓名
      */
-    private String arrival;
+    private String realName;
 
     /**
-     * 订单来源
+     * 证件类型
      */
-    private Integer source;
+    private Integer idType;
 
     /**
-     * 下单时间
+     * 证件号
      */
-    private Date orderTime;
+    private String idCard;
 
     /**
-     * 乘车日期
+     * 车票类型 0：成人 1：儿童 2：学生 3：残疾军人
      */
-    private Date ridingDate;
+    private Integer ticketType;
 
     /**
-     * 列车车次
+     * 订单金额
      */
-    private String trainNumber;
-
-    /**
-     * 出发时间
-     */
-    private Date departureTime;
-
-    /**
-     * 到达时间
-     */
-    private Date arrivalTime;
-
-    /**
-     * 订单明细
-     */
-    private List<TicketOrderItemCreateRemoteReqDTO> ticketOrderItems;
+    private Integer amount;
 }
