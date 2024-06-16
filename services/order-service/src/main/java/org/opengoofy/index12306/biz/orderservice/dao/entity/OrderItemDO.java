@@ -45,6 +45,16 @@ public class OrderItemDO extends BaseDO {
     private String orderSn;
 
     /**
+     * 用户id
+     */
+    private String userId;
+
+    /**
+     * 用户名
+     */
+    private String username;
+
+    /**
      * 列车id
      */
     private Long trainId;

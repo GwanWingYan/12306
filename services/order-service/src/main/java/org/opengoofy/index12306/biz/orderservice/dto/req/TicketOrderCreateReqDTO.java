@@ -29,6 +29,11 @@ import java.util.List;
 public class TicketOrderCreateReqDTO {
 
     /**
+     * 用户 ID
+     */
+    private Long userId;
+
+    /**
      * 用户名
      */
     private String username;
