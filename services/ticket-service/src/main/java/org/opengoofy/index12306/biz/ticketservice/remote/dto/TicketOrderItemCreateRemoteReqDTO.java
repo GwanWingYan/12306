@@ -32,6 +32,11 @@ import lombok.NoArgsConstructor;
 public class TicketOrderItemCreateRemoteReqDTO {
 
     /**
+     * 用户 ID
+     */
+    private Long userId;
+
+    /**
      * 车厢号
      */
     private String carriageNumber;
