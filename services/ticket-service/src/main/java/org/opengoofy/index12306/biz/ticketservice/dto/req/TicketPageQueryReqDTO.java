@@ -30,12 +30,12 @@ import java.util.Date;
 public class TicketPageQueryReqDTO extends PageRequest {
 
     /**
-     * 出发地
+     * 出发地 Code
      */
     private String fromStation;
 
     /**
-     * 目的地
+     * 目的地 Code
      */
     private String toStation;
 
