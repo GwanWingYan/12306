@@ -15,20 +15,32 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.common.constant;
+package org.opengoofy.index12306.biz.userservice.config;
+
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Redis Key 定义常量类
+ * 用户注册布隆过滤器属性配置
  */
-public final class RedisKeyConstant {
+@Data
+@ConfigurationProperties(prefix = UserRegisterBloomFilterProperties.PREFIX)
+public final class UserRegisterBloomFilterProperties {
+
+    public static final String PREFIX = "framework.cache.redis.bloom-filter.user-register";
 
     /**
-     * 用户注销锁，Key Prefix + 用户名
+     * 用户注册布隆过滤器实例名称
      */
-    public static final String USER_DELETION = "index12306-user-service:user-deletion:";
+    private String name = " user_register_cache_penetration_bloom_filter";
 
     /**
-     * 用户注册可复用用户名分片，Key Prefix + Idx
+     * 每个元素的预期插入量
      */
-    public static final String USER_REGISTER_REUSE_SHARDING = "index12306-user-service:user-reuse:";
+    private Long expectedInsertions = 64000L;
+
+    /**
+     * 预期错误概率
+     */
+    private Double falseProbability = 0.03D;
 }

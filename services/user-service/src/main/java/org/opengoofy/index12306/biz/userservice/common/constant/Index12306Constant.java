@@ -18,17 +18,12 @@
 package org.opengoofy.index12306.biz.userservice.common.constant;
 
 /**
- * Redis Key 定义常量类
+ * 系统级公共常量
  */
-public final class RedisKeyConstant {
+public final class Index12306Constant {
 
     /**
-     * 用户注销锁，Key Prefix + 用户名
+     * 用户注册可复用用户名分片数
      */
-    public static final String USER_DELETION = "index12306-user-service:user-deletion:";
-
-    /**
-     * 用户注册可复用用户名分片，Key Prefix + Idx
-     */
-    public static final String USER_REGISTER_REUSE_SHARDING = "index12306-user-service:user-reuse:";
+    public static final int USER_REGISTER_REUSE_SHARDING_COUNT = 1024;
 }

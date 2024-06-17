@@ -15,20 +15,19 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.common.constant;
+package org.opengoofy.index12306.biz.userservice.toolkit;
+
+import static org.opengoofy.index12306.biz.userservice.common.constant.Index12306Constant.USER_REGISTER_REUSE_SHARDING_COUNT;
 
 /**
- * Redis Key 定义常量类
+ * 用户名可复用工具类
  */
-public final class RedisKeyConstant {
+public final class UserReuseUtil {
 
     /**
-     * 用户注销锁，Key Prefix + 用户名
+     * 计算分片位置
      */
-    public static final String USER_DELETION = "index12306-user-service:user-deletion:";
-
-    /**
-     * 用户注册可复用用户名分片，Key Prefix + Idx
-     */
-    public static final String USER_REGISTER_REUSE_SHARDING = "index12306-user-service:user-reuse:";
+    public static int hashShardingIdx(String username) {
+        return Math.abs(username.hashCode() % USER_REGISTER_REUSE_SHARDING_COUNT);
+    }
 }

@@ -15,20 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.common.constant;
+package org.opengoofy.index12306.biz.userservice.dao.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.userservice.dao.entity.UserReuseDO;
 
 /**
- * Redis Key 定义常量类
+ * 用户名复用持久层
  */
-public final class RedisKeyConstant {
-
-    /**
-     * 用户注销锁，Key Prefix + 用户名
-     */
-    public static final String USER_DELETION = "index12306-user-service:user-deletion:";
-
-    /**
-     * 用户注册可复用用户名分片，Key Prefix + Idx
-     */
-    public static final String USER_REGISTER_REUSE_SHARDING = "index12306-user-service:user-reuse:";
+public interface UserReuseMapper extends BaseMapper<UserReuseDO> {
 }
