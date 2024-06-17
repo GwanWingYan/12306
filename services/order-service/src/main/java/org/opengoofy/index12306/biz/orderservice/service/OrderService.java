@@ -18,14 +18,19 @@
 package org.opengoofy.index12306.biz.orderservice.service;
 
 import org.opengoofy.index12306.biz.orderservice.dto.domain.OrderStatusReversalDTO;
+import org.opengoofy.index12306.biz.orderservice.dto.req.CancelTicketOrderReqDTO;
 import org.opengoofy.index12306.biz.orderservice.dto.req.TicketOrderCreateReqDTO;
 import org.opengoofy.index12306.biz.orderservice.dto.req.TicketOrderPageQueryReqDTO;
+import org.opengoofy.index12306.biz.orderservice.dto.req.TicketOrderSelfPageQueryReqDTO;
 import org.opengoofy.index12306.biz.orderservice.dto.resp.TicketOrderDetailRespDTO;
+import org.opengoofy.index12306.biz.orderservice.dto.resp.TicketOrderDetailSelfRespDTO;
 import org.opengoofy.index12306.biz.orderservice.mq.event.PayResultCallbackOrderEvent;
 import org.opengoofy.index12306.framework.starter.convention.page.PageResponse;
 
 /**
  * 订单接口层
+ *
+ * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
  */
 public interface OrderService {
 
@@ -56,16 +61,16 @@ public interface OrderService {
     /**
      * 关闭火车票订单
      *
-     * @param orderSn 订单号
+     * @param requestParam 关闭火车票订单入参
      */
-    void closeTickOrder(String orderSn);
+    void closeTickOrder(CancelTicketOrderReqDTO requestParam);
 
     /**
      * 取消火车票订单
      *
-     * @param orderSn 订单号
+     * @param requestParam 取消火车票订单入参
      */
-    void cancelTickOrder(String orderSn);
+    void cancelTickOrder(CancelTicketOrderReqDTO requestParam);
 
     /**
      * 订单状态反转
@@ -80,4 +85,12 @@ public interface OrderService {
      * @param requestParam 请求参数
      */
     void payCallbackOrder(PayResultCallbackOrderEvent requestParam);
+
+    /**
+     * 查询本人车票订单
+     *
+     * @param requestParam 请求参数
+     * @return 本人车票订单集合
+     */
+    PageResponse<TicketOrderDetailSelfRespDTO> pageSelfTicketOrder(TicketOrderSelfPageQueryReqDTO requestParam);
 }
