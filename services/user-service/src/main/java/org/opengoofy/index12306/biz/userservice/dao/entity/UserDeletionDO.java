@@ -15,28 +15,37 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.framework.starter.log.core;
+package org.opengoofy.index12306.biz.userservice.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
 /**
- * ILog 日志打印实体
+ * 用户注销表实体
  */
 @Data
-public class ILogPrintDTO {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@TableName("t_user_deletion")
+public class UserDeletionDO extends BaseDO {
 
     /**
-     * 开始时间
+     * id
      */
-    private String beginTime;
+    private Long id;
 
     /**
-     * 请求入参
+     * 证件类型
      */
-    private Object[] inputParams;
+    private Integer idType;
 
     /**
-     * 返回参数
+     * 证件号
      */
-    private Object outputParams;
+    private String idCard;
 }

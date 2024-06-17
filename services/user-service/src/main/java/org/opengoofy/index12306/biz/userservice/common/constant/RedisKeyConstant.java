@@ -15,28 +15,15 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.framework.starter.log.core;
-
-import lombok.Data;
+package org.opengoofy.index12306.biz.userservice.common.constant;
 
 /**
- * ILog 日志打印实体
+ * Redis Key 定义常量类
  */
-@Data
-public class ILogPrintDTO {
+public final class RedisKeyConstant {
 
     /**
-     * 开始时间
+     * 用户注销锁，Key Prefix + 用户名
      */
-    private String beginTime;
-
-    /**
-     * 请求入参
-     */
-    private Object[] inputParams;
-
-    /**
-     * 返回参数
-     */
-    private Object outputParams;
+    public static final String USER_DELETION = "index12306-user-service:user-deletion:";
 }
