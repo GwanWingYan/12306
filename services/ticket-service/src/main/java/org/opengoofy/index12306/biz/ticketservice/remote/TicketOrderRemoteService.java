@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * 车票订单远程服务调用
  */
-@FeignClient(value = "index12306-order-service", url = "${aggregation.remote-url:}")
+@FeignClient(value = "index12306-order${unique-name:}-service", url = "${aggregation.remote-url:}")
 public interface TicketOrderRemoteService {
 
     /**
