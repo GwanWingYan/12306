@@ -67,4 +67,12 @@ public class PayController {
     public Result<PayInfoRespDTO> getPayInfoByPaySn(@RequestParam(value = "paySn") String paySn) {
         return Results.success(payService.getPayInfoByPaySn(paySn));
     }
+
+    /**
+     * 公共退款接口
+     */
+    @PostMapping("/api/pay-service/refund")
+    public Result<RefundRespDTO> refund(@RequestBody RefundReqDTO requestParam) {
+        return Results.success(payService.commonRefund(requestParam));
+    }
 }
