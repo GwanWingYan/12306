@@ -22,7 +22,7 @@ import org.opengoofy.index12306.framework.starter.bases.Singleton;
 /**
  * 座位通过 BitMap 检测抽象工厂
  */
-public abstract class  BitMapCheckSeatStatusFactory {
+public abstract class BitMapCheckSeatStatusFactory {
 
     public static final String TRAIN_BUSINESS = "TRAIN_BUSINESS";
     public static final String TRAIN_FIRST = "TRAIN_FIRST";
@@ -38,21 +38,21 @@ public abstract class  BitMapCheckSeatStatusFactory {
         BitMapCheckSeat instance = null;
         switch (mark) {
             case TRAIN_BUSINESS -> {
-                instance =  Singleton.get(TRAIN_BUSINESS);
+                instance = Singleton.get(TRAIN_BUSINESS);
                 if (instance == null) {
                     instance = new TrainBusinessCheckSeat();
                     Singleton.put(TRAIN_BUSINESS, instance);
                 }
             }
             case TRAIN_FIRST -> {
-                instance =  Singleton.get(TRAIN_FIRST);
+                instance = Singleton.get(TRAIN_FIRST);
                 if (instance == null) {
                     instance = new TrainFirstCheckSeat();
                     Singleton.put(TRAIN_FIRST, instance);
                 }
             }
             case TRAIN_SECOND -> {
-                instance =  Singleton.get(TRAIN_SECOND);
+                instance = Singleton.get(TRAIN_SECOND);
                 if (instance == null) {
                     instance = new TrainSecondCheckSeat();
                     Singleton.put(TRAIN_SECOND, instance);

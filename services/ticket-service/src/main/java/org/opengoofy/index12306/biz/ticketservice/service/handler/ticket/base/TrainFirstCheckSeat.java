@@ -24,7 +24,7 @@ import java.util.HashMap;
 /**
  * 高铁一等座验证座位
  */
-public class TrainFirstCheckSeat implements TrainBitMapCheckSeat{
+public class TrainFirstCheckSeat implements TrainBitMapCheckSeat {
 
     /**
      * 高铁一等座是否存在检查方法
