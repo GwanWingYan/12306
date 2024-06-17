@@ -15,26 +15,19 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.service.handler.ticket.filter;
+package org.opengoofy.index12306.biz.ticketservice.service.handler.ticket.filter.purchase;
 
-import lombok.RequiredArgsConstructor;
+import org.opengoofy.index12306.biz.ticketservice.common.enums.TicketChainMarkEnum;
 import org.opengoofy.index12306.biz.ticketservice.dto.req.PurchaseTicketReqDTO;
-import org.springframework.stereotype.Component;
+import org.opengoofy.index12306.framework.starter.designpattern.chain.AbstractChainHandler;
 
 /**
- * 购票流程过滤器之验证乘客是否重复购买
+ * 列车购买车票过滤器
  */
-@Component
-@RequiredArgsConstructor
-public class TrainPurchaseTicketRepeatChainHandler implements TrainPurchaseTicketChainFilter<PurchaseTicketReqDTO> {
+public interface TrainPurchaseTicketChainFilter<T extends PurchaseTicketReqDTO> extends AbstractChainHandler<PurchaseTicketReqDTO> {
 
     @Override
-    public void handler(PurchaseTicketReqDTO requestParam) {
-        // TODO 重复购买验证后续实现
-    }
-
-    @Override
-    public int getOrder() {
-        return 30;
+    default String mark() {
+        return TicketChainMarkEnum.TRAIN_PURCHASE_TICKET_FILTER.name();
     }
 }
