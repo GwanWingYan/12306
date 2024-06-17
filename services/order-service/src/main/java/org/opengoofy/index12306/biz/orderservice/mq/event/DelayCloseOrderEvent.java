@@ -15,49 +15,47 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice.mq.produce;
+package org.opengoofy.index12306.biz.orderservice.mq.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.opengoofy.index12306.biz.orderservice.dto.req.TicketOrderItemCreateReqDTO;
+
+import java.util.List;
 
 /**
- * 消息发送事件基础扩充属性实体
+ * 延迟关闭订单事件
  */
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public final class BaseSendExtendDTO {
+public class DelayCloseOrderEvent {
 
     /**
-     * 事件名称
+     * 车次 ID
      */
-    private String eventName;
+    private String trainId;
 
     /**
-     * 主题
+     * 出发站点
      */
-    private String topic;
+    private String departure;
 
     /**
-     * 标签
+     * 到达站点
      */
-    private String tag;
+    private String arrival;
 
     /**
-     * 业务标识
+     * 订单号
      */
-    private String keys;
+    private String orderSn;
 
     /**
-     * 发送消息超时时间
+     * 乘车人购票信息
      */
-    private Long sentTimeout;
-
-    /**
-     * 延迟消息
-     */
-    private Integer delayLevel;
+    private List<TicketOrderItemCreateReqDTO> trainPurchaseTicketResults;
 }

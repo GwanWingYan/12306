@@ -15,63 +15,49 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.orderservice.dto.req;
+package org.opengoofy.index12306.biz.orderservice.mq.produce;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * 车票订单详情创建请求参数
+ * 消息发送事件基础扩充属性实体
  */
 @Data
-public class TicketOrderItemCreateReqDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public final class BaseSendExtendDTO {
 
     /**
-     * 车厢号
+     * 事件名称
      */
-    private String carriageNumber;
+    private String eventName;
 
     /**
-     * 座位类型
+     * 主题
      */
-    private Integer seatType;
+    private String topic;
 
     /**
-     * 座位号
+     * 标签
      */
-    private String seatNumber;
+    private String tag;
 
     /**
-     * 乘车人 ID
+     * 业务标识
      */
-    private String passengerId;
+    private String keys;
 
     /**
-     * 真实姓名
+     * 发送消息超时时间
      */
-    private String realName;
+    private Long sentTimeout;
 
     /**
-     * 证件类型
+     * 延迟消息
      */
-    private Integer idType;
-
-    /**
-     * 证件号
-     */
-    private String idCard;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 订单金额
-     */
-    private Integer amount;
-
-    /**
-     * 车票类型
-     */
-    private Integer ticketType;
+    private Integer delayLevel;
 }
