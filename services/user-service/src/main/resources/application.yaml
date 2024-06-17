@@ -1,9 +1,10 @@
+
 server:
   port: 9001
 
 spring:
   application:
-    name: index12306-user-service
+    name: index12306-user${unique-name:}-service
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
     url: jdbc:shardingsphere:classpath:shardingsphere-config.yaml
