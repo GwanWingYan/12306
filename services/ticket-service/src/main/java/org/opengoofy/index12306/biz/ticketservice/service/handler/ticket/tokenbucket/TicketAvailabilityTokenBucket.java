@@ -57,6 +57,8 @@ import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKe
 
 /**
  * 列车车票余量令牌桶，应对海量并发场景下满足并行、限流以及防超卖等场景
+ *
+ * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
  */
 @Component
 @RequiredArgsConstructor
@@ -68,7 +70,7 @@ public final class TicketAvailabilityTokenBucket {
     private final SeatMapper seatMapper;
     private final TrainMapper trainMapper;
 
-    private static final String LUA_TICKET_AVAILABILITY_TOKEN_BUCKET_PATH = "lua/ticketAvailabilityTokenBucketLua.lua";
+    private static final String LUA_TICKET_AVAILABILITY_TOKEN_BUCKET_PATH = "lua/ticket_availability_token_bucket.lua";
 
     /**
      * 获取车站间令牌桶中的令牌访问
