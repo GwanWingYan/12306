@@ -30,6 +30,11 @@ import java.util.List;
 public class TicketOrderDetailRespDTO {
 
     /**
+     * 订单号
+     */
+    private String orderSn;
+
+    /**
      * 出发站点
      */
     private String departure;
