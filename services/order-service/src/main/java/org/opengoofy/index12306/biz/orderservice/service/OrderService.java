@@ -29,8 +29,6 @@ import org.opengoofy.index12306.framework.starter.convention.page.PageResponse;
 
 /**
  * 订单接口层
- *
- * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
  */
 public interface OrderService {
 
@@ -63,14 +61,14 @@ public interface OrderService {
      *
      * @param requestParam 关闭火车票订单入参
      */
-    void closeTickOrder(CancelTicketOrderReqDTO requestParam);
+    boolean closeTickOrder(CancelTicketOrderReqDTO requestParam);
 
     /**
      * 取消火车票订单
      *
      * @param requestParam 取消火车票订单入参
      */
-    void cancelTickOrder(CancelTicketOrderReqDTO requestParam);
+    boolean cancelTickOrder(CancelTicketOrderReqDTO requestParam);
 
     /**
      * 订单状态反转
