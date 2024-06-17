@@ -42,6 +42,7 @@ import java.util.stream.Collectors;
 import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKeyConstant.TRAIN_STATION_CARRIAGE_REMAINING_TICKET;
 
 /**
+ * 座位接口层实现
  */
 @Service
 @RequiredArgsConstructor
@@ -81,6 +82,20 @@ public class SeatServiceImpl extends ServiceImpl<SeatMapper, SeatDO> implements 
                 .endStation(arrival)
                 .build();
         return seatMapper.listSeatRemainingTicket(seatDO, trainCarriageList);
+    }
+
+    @Override
+    public List<String> listUsableCarriageNumber(String trainId, Integer carriageType, String departure, String arrival) {
+        LambdaQueryWrapper<SeatDO> queryWrapper = Wrappers.lambdaQuery(SeatDO.class)
+                .eq(SeatDO::getTrainId, trainId)
+                .eq(SeatDO::getSeatType, carriageType)
+                .eq(SeatDO::getStartStation, departure)
+                .eq(SeatDO::getEndStation, arrival)
+                .eq(SeatDO::getSeatStatus, SeatStatusEnum.AVAILABLE.getCode())
+                .groupBy(SeatDO::getCarriageNumber)
+                .select(SeatDO::getCarriageNumber);
+        List<SeatDO> seatDOList = seatMapper.selectList(queryWrapper);
+        return seatDOList.stream().map(SeatDO::getCarriageNumber).collect(Collectors.toList());
     }
 
     @Override
