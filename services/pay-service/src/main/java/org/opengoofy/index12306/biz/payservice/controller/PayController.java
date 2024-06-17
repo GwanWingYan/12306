@@ -19,9 +19,7 @@ package org.opengoofy.index12306.biz.payservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.opengoofy.index12306.biz.payservice.convert.PayRequestConvert;
-import org.opengoofy.index12306.biz.payservice.dto.PayCommand;
-import org.opengoofy.index12306.biz.payservice.dto.PayInfoRespDTO;
-import org.opengoofy.index12306.biz.payservice.dto.PayRespDTO;
+import org.opengoofy.index12306.biz.payservice.dto.*;
 import org.opengoofy.index12306.biz.payservice.dto.base.PayRequest;
 import org.opengoofy.index12306.biz.payservice.service.PayService;
 import org.opengoofy.index12306.framework.starter.convention.result.Result;
