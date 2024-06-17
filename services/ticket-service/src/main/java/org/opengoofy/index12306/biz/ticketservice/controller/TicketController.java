@@ -69,7 +69,7 @@ public class TicketController {
     )
     @PostMapping("/api/ticket-service/ticket/purchase")
     public Result<TicketPurchaseRespDTO> purchaseTickets(@RequestBody PurchaseTicketReqDTO requestParam) {
-        return Results.success(ticketService.purchaseTicketsV2(requestParam));
+        return Results.success(ticketService.purchaseTicketsV1(requestParam));
     }
 
     /**
