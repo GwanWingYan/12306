@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.orderservice.dto.resp;
+package org.opengoofy.index12306.biz.ticketservice.remote.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

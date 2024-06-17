@@ -15,71 +15,64 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.orderservice.dto.resp;
+package org.opengoofy.index12306.biz.ticketservice.remote.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-
-import java.util.Date;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 /**
  * 车票订单详情返回参数
  */
 @Data
-public class TicketOrderDetailRespDTO {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class TicketOrderPassengerDetailRespDTO {
 
     /**
-     * 订单号
+     * 席别类型
      */
-    private String orderSn;
+    private Integer seatType;
 
     /**
-     * 列车 ID
+     * 车厢号
      */
-    private Long trainId;
+    private String carriageNumber;
 
     /**
-     * 出发站点
+     * 座位号
      */
-    private String departure;
+    private String seatNumber;
 
     /**
-     * 到达站点
+     * 真实姓名
      */
-    private String arrival;
+    private String realName;
 
     /**
-     * 乘车日期
+     * 证件类型
      */
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date ridingDate;
+    private Integer idType;
 
     /**
-     * 订票日期
+     * 证件号
      */
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date orderTime;
+    private String idCard;
 
     /**
-     * 列车车次
+     * 车票类型 0：成人 1：儿童 2：学生 3：残疾军人
      */
-    private String trainNumber;
+    private Integer ticketType;
 
     /**
-     * 出发时间
+     * 订单金额
      */
-    @JsonFormat(pattern = "HH:mm", timezone = "GMT+8")
-    private Date departureTime;
+    private Integer amount;
 
     /**
-     * 到达时间
+     * 车票状态
      */
-    @JsonFormat(pattern = "HH:mm", timezone = "GMT+8")
-    private Date arrivalTime;
-
-    /**
-     * 乘车人订单详情
-     */
-    private List<TicketOrderPassengerDetailRespDTO> passengerDetails;
+    private Integer status;
 }
