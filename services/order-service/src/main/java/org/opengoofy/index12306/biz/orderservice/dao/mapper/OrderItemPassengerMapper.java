@@ -15,42 +15,13 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.orderservice.dao.entity;
+package org.opengoofy.index12306.biz.orderservice.dao.mapper;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.opengoofy.index12306.biz.orderservice.dao.entity.OrderItemPassengerDO;
 
 /**
- * 乘车人订单关系实体
+ * 乘车人订单关系持久层
  */
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@TableName("t_order_passenger_relation")
-public class OrderPassengerRelationDO extends BaseDO {
-
-    /**
-     * id
-     */
-    private Long id;
-
-    /**
-     * 订单号
-     */
-    private String orderSn;
-
-    /**
-     * 证件类型
-     */
-    private Integer idType;
-
-    /**
-     * 证件号
-     */
-    private String idCard;
+public interface OrderItemPassengerMapper extends BaseMapper<OrderItemPassengerDO> {
 }
