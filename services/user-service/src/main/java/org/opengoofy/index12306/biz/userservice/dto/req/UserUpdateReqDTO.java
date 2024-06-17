@@ -15,63 +15,25 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.dao.entity;
+package org.opengoofy.index12306.biz.userservice.dto.req;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
 /**
- * 用户信息实体
+ * 用户修改请求参数
  */
 @Data
-@TableName("t_user")
-public class UserDO extends BaseDO {
+public class UserUpdateReqDTO {
 
     /**
-     * id
+     * 用户ID
      */
-    private Long id;
+    private String id;
 
     /**
      * 用户名
      */
     private String username;
-
-    /**
-     * 密码
-     */
-    private String password;
-
-    /**
-     * 真实姓名
-     */
-    private String realName;
-
-    /**
-     * 国家/地区
-     */
-    private String region;
-
-    /**
-     * 证件类型
-     */
-    private Integer idType;
-
-    /**
-     * 证件号
-     */
-    private String idCard;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 固定电话
-     */
-    private String telephone;
 
     /**
      * 邮箱
@@ -84,11 +46,6 @@ public class UserDO extends BaseDO {
     private Integer userType;
 
     /**
-     * 审核状态
-     */
-    private Integer verifyStatus;
-
-    /**
      * 邮编
      */
     private String postCode;
@@ -97,9 +54,4 @@ public class UserDO extends BaseDO {
      * 地址
      */
     private String address;
-
-    /**
-     * 注销时间戳
-     */
-    private Long deletionTime;
 }

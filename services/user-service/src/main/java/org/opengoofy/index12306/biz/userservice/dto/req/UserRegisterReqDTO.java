@@ -79,4 +79,14 @@ public class UserRegisterReqDTO {
      * 地址
      */
     private String address;
+
+    /**
+     * 国家/地区
+     */
+    private String region;
+
+    /**
+     * 固定电话
+     */
+    private String telephone;
 }
