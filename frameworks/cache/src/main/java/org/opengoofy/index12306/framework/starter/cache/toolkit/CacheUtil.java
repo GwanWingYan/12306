@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 /**
  * 缓存工具类
  */
-public class CacheUtil {
+public final class CacheUtil {
 
     private static final String SPLICING_OPERATOR = "_";
 

@@ -24,7 +24,7 @@ import java.lang.reflect.Type;
 /**
  * FastJson2 工具类
  */
-public class FastJson2Util {
+public final class FastJson2Util {
 
     /**
      * 构建类型
