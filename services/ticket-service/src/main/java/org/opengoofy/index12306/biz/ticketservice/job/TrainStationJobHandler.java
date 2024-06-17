@@ -38,7 +38,9 @@ import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKe
 
 /**
  * 列车路线信息定时任务
+ * 已通过运行时实时获取解决该定时任务
  */
+@Deprecated
 @RestController
 @RequiredArgsConstructor
 public class TrainStationJobHandler extends AbstractTrainStationJobHandlerTemplate {
