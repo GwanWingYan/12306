@@ -34,5 +34,5 @@ public class TicketOrderItemQueryReqDTO {
     /**
      * 子订单记录id
      */
-    private List<Long> orderItemRecordIds;
+    private List<String> orderItemRecordIds;
 }
