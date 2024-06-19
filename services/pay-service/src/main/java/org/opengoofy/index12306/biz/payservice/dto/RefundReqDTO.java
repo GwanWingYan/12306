@@ -18,9 +18,14 @@
 package org.opengoofy.index12306.biz.payservice.dto;
 
 import lombok.Data;
+import org.opengoofy.index12306.biz.payservice.common.enums.RefundTypeEnum;
 import org.opengoofy.index12306.biz.payservice.remote.dto.TicketOrderPassengerDetailRespDTO;
+
 import java.util.List;
 
+/**
+ * 退款请求入参数实体
+ */
 @Data
 public class RefundReqDTO {
 
@@ -30,9 +35,9 @@ public class RefundReqDTO {
     private String orderSn;
 
     /**
-     * 退款类型 11 部分退款 12 全部退款
+     * 退款类型枚举
      */
-    private Integer type;
+    private RefundTypeEnum refundTypeEnum;
 
     /**
      * 退款金额

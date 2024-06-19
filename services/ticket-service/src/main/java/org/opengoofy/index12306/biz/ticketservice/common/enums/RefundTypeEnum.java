@@ -20,6 +20,9 @@ package org.opengoofy.index12306.biz.ticketservice.common.enums;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * 退款类型枚举
+ */
 @Getter
 @RequiredArgsConstructor
 public enum RefundTypeEnum {

@@ -34,7 +34,6 @@ public enum TradeStatusEnum {
      * 交易创建，等待买家付款
      */
     WAIT_BUYER_PAY {
-
         @Override
         public Integer tradeCode() {
             return 0;
@@ -47,10 +46,9 @@ public enum TradeStatusEnum {
     },
 
     /**
-     * 未付款交易超时关闭，或支付完成后全额退款
+     * 未付款交易超时关闭，或支付完成后全额退款/部分退款
      */
     TRADE_CLOSED {
-
         @Override
         public Integer tradeCode() {
             return 10;
@@ -66,7 +64,6 @@ public enum TradeStatusEnum {
      * 交易支付成功
      */
     TRADE_SUCCESS {
-
         @Override
         public Integer tradeCode() {
             return 20;
@@ -82,7 +79,6 @@ public enum TradeStatusEnum {
      * 交易结束，不可退款
      */
     TRADE_FINISHED {
-
         @Override
         public Integer tradeCode() {
             return 30;

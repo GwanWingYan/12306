@@ -20,14 +20,13 @@ package org.opengoofy.index12306.biz.orderservice.mq.event;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.opengoofy.index12306.biz.orderservice.common.enums.RefundTypeEnum;
 import org.opengoofy.index12306.biz.orderservice.dto.resp.TicketOrderPassengerDetailRespDTO;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 /**
- * 支付结果回调订单服务事件
+ * 退款结果回调订单服务事件
  */
 @Data
 @NoArgsConstructor
@@ -40,9 +39,9 @@ public final class RefundResultCallbackOrderEvent {
     private String orderSn;
 
     /**
-     * 退款类型
+     * 退款类型枚举
      */
-    private Integer type;
+    private RefundTypeEnum refundTypeEnum;
 
     /**
      * 部分退款车票详情
