@@ -50,8 +50,6 @@ import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKe
 
 /**
  * 延迟关闭订单消费者
- *
- * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
  */
 @Slf4j
 @Component
@@ -84,7 +82,11 @@ public final class DelayCloseOrderConsumer implements RocketMQListener<MessageWr
             log.error("[延迟关闭订单] 订单号：{} 远程调用订单服务失败", orderSn, ex);
             throw ex;
         }
-        if (closedTickOrder.isSuccess() && closedTickOrder.getData() && !StrUtil.equals(ticketAvailabilityCacheUpdateType, "binlog")) {
+        if (closedTickOrder.isSuccess() && !StrUtil.equals(ticketAvailabilityCacheUpdateType, "binlog")) {
+            if (!closedTickOrder.getData()) {
+                log.info("[延迟关闭订单] 订单号：{} 用户已支付订单", orderSn);
+                return;
+            }
             String trainId = delayCloseOrderEvent.getTrainId();
             String departure = delayCloseOrderEvent.getDeparture();
             String arrival = delayCloseOrderEvent.getArrival();
