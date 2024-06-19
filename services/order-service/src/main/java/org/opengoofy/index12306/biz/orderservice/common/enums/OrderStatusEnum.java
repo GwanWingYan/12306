@@ -23,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * 订单状态枚举
  */
+@Getter
 @RequiredArgsConstructor
 public enum OrderStatusEnum {
 
@@ -56,6 +57,5 @@ public enum OrderStatusEnum {
      */
     CLOSED(30);
 
-    @Getter
     private final int status;
 }

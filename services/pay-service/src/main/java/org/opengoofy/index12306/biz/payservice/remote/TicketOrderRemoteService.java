@@ -38,5 +38,4 @@ public interface TicketOrderRemoteService {
      */
     @GetMapping("/api/order-service/order/ticket/query")
     Result<TicketOrderDetailRespDTO> queryTicketOrderByOrderSn(@RequestParam(value = "orderSn") String orderSn);
-
 }

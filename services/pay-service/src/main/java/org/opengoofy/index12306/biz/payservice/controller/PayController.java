@@ -19,7 +19,11 @@ package org.opengoofy.index12306.biz.payservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.opengoofy.index12306.biz.payservice.convert.PayRequestConvert;
-import org.opengoofy.index12306.biz.payservice.dto.*;
+import org.opengoofy.index12306.biz.payservice.dto.PayCommand;
+import org.opengoofy.index12306.biz.payservice.dto.PayInfoRespDTO;
+import org.opengoofy.index12306.biz.payservice.dto.PayRespDTO;
+import org.opengoofy.index12306.biz.payservice.dto.RefundReqDTO;
+import org.opengoofy.index12306.biz.payservice.dto.RefundRespDTO;
 import org.opengoofy.index12306.biz.payservice.dto.base.PayRequest;
 import org.opengoofy.index12306.biz.payservice.service.PayService;
 import org.opengoofy.index12306.framework.starter.convention.result.Result;
@@ -68,7 +72,9 @@ public class PayController {
 
     /**
      * 公共退款接口
+     * 后续为了方便开发系列退款相关接口，已迁移 {@link RefundController#commonRefund(RefundReqDTO)}
      */
+    @Deprecated
     @PostMapping("/api/pay-service/refund")
     public Result<RefundRespDTO> refund(@RequestBody RefundReqDTO requestParam) {
         return Results.success(payService.commonRefund(requestParam));

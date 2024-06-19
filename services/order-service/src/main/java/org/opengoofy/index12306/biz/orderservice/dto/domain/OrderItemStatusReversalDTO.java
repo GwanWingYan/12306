@@ -21,6 +21,7 @@ public class OrderItemStatusReversalDTO {
      * 订单号
      */
     private String orderSn;
+
     /**
      * 订单反转后状态
      */

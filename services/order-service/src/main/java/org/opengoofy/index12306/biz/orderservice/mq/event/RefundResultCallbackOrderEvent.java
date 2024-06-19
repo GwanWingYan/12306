@@ -38,6 +38,7 @@ public final class RefundResultCallbackOrderEvent {
      * 订单号
      */
     private String orderSn;
+
     /**
      * 退款类型
      */
