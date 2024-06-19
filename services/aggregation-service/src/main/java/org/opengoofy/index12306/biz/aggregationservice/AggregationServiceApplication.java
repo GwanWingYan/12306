@@ -18,6 +18,7 @@
 package org.opengoofy.index12306.biz.aggregationservice;
 
 import cn.crane4j.spring.boot.annotation.EnableCrane4j;
+import cn.hippo4j.core.enable.EnableDynamicThreadPool;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,6 +28,7 @@ import org.springframework.retry.annotation.EnableRetry;
 /**
  * 12306 聚合服务应用启动器
  */
+@EnableDynamicThreadPool
 @SpringBootApplication(scanBasePackages = {
         "org.opengoofy.index12306.biz.userservice",
         "org.opengoofy.index12306.biz.ticketservice",
