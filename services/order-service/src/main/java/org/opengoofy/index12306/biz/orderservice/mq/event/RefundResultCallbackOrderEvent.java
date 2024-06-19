@@ -15,15 +15,24 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.payservice.dto;
+package org.opengoofy.index12306.biz.orderservice.mq.event;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.opengoofy.index12306.biz.payservice.remote.dto.TicketOrderPassengerDetailRespDTO;
+import lombok.NoArgsConstructor;
+import org.opengoofy.index12306.biz.orderservice.dto.resp.TicketOrderPassengerDetailRespDTO;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
+/**
+ * 支付结果回调订单服务事件
+ */
 @Data
-public class RefundReqDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+public final class RefundResultCallbackOrderEvent {
 
     /**
      * 订单号
@@ -35,7 +44,7 @@ public class RefundReqDTO {
     private Integer type;
 
     /**
-     * 部分退款车票详情集合
+     * 部分退款车票详情
      */
-    private List<TicketOrderPassengerDetailRespDTO> refundDetailReqDTOList;
+    private List<TicketOrderPassengerDetailRespDTO> partialRefundTicketDetailList;
 }
