@@ -40,7 +40,7 @@ import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKe
 import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKeyConstant.TRAIN_STATION_REMAINING_TICKET;
 
 /**
- * TODO 待删除，联调临时解决方案
+ * 联调临时解决方案，不在主流程中
  */
 @Deprecated
 @RestController
