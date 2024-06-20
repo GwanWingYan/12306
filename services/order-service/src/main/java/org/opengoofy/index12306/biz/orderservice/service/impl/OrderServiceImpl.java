@@ -220,7 +220,6 @@ public class OrderServiceImpl implements OrderService {
         try {
             OrderDO updateOrderDO = new OrderDO();
             updateOrderDO.setStatus(OrderStatusEnum.CLOSED.getStatus());
-            updateOrderDO.setOrderSn(orderSn);
             LambdaUpdateWrapper<OrderDO> updateWrapper = Wrappers.lambdaUpdate(OrderDO.class)
                     .eq(OrderDO::getOrderSn, orderSn);
             int updateResult = orderMapper.update(updateOrderDO, updateWrapper);
@@ -229,7 +228,6 @@ public class OrderServiceImpl implements OrderService {
             }
             OrderItemDO updateOrderItemDO = new OrderItemDO();
             updateOrderItemDO.setStatus(OrderItemStatusEnum.CLOSED.getStatus());
-            updateOrderItemDO.setOrderSn(orderSn);
             LambdaUpdateWrapper<OrderItemDO> updateItemWrapper = Wrappers.lambdaUpdate(OrderItemDO.class)
                     .eq(OrderItemDO::getOrderSn, orderSn);
             int updateItemResult = orderItemMapper.update(updateOrderItemDO, updateItemWrapper);
