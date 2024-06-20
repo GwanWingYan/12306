@@ -76,7 +76,7 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     private String getActualUserPassengerListStr(String username) {
-        return  distributedCache.safeGet(
+        return distributedCache.safeGet(
                 USER_PASSENGER_LIST + username,
                 String.class,
                 () -> {
@@ -104,8 +104,6 @@ public class PassengerServiceImpl implements PassengerService {
 
     @Override
     public void savePassenger(PassengerReqDTO requestParam) {
-        TransactionDefinition transactionDefinition = new DefaultTransactionDefinition();
-        TransactionStatus transactionStatus = transactionManager.getTransaction(transactionDefinition);
         String username = UserContext.getUsername();
         try {
             PassengerDO passengerDO = BeanUtil.convert(requestParam, PassengerDO.class);
@@ -116,14 +114,12 @@ public class PassengerServiceImpl implements PassengerService {
             if (!SqlHelper.retBool(inserted)) {
                 throw new ServiceException(String.format("[%s] 新增乘车人失败", username));
             }
-            transactionManager.commit(transactionStatus);
         } catch (Exception ex) {
             if (ex instanceof ServiceException) {
                 log.error("{}，请求参数：{}", ex.getMessage(), JSON.toJSONString(requestParam));
             } else {
                 log.error("[{}] 新增乘车人失败，请求参数：{}", username, JSON.toJSONString(requestParam), ex);
             }
-            transactionManager.rollback(transactionStatus);
             throw ex;
         }
         delUserPassengerCache(username);
