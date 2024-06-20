@@ -51,6 +51,7 @@ import static org.opengoofy.index12306.biz.ticketservice.common.constant.RedisKe
 /**
  * 地区站点查询定时任务
  */
+@Deprecated
 @RestController
 @RequiredArgsConstructor
 public class RegionTrainStationJobHandler extends IJobHandler {
